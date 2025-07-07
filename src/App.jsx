@@ -1,14 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header';
+import React, { useState } from 'react';
+import CardList from './components/CardList';
 
 function App() {
+  const [cards] = useState([
+    { id: 1, title: 'Card One', content: 'This is the first card.' },
+    { id: 2, title: 'Card Two', content: 'This is the second card.' },
+  ]);
+
+  function onCardClick(id) {
+    alert(`Card ${id} clicked!`);
+  }
+
   return (
-    <div>
-      <Header />
-      <h1>Welcome to My React App</h1>
-      <p>This is a simple React application.</p>
-      <p>Learning React is fun!</p>
+    <div style={{ padding: '2rem' }}>
+      <h1>My Props‑Driven Cards</h1>
+      <CardList cards={cards} handleCardClick={onCardClick} />
     </div>
   );
 }
