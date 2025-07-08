@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './App.css'; 
-import Counter from './components/Counter';
+import ProfileForm from './components/ProfileForm';
 
 function App() {
 
   return (
     <div>
-      <Counter />
+      <ProfileForm />
+      
     </div>
   );
 }
